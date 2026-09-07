@@ -4,16 +4,15 @@
   <meta charset="UTF-8">
   <title>블라인드 트래킹 테스트 페이지</title>
   
-  <!-- 1. 대시보드에서 복사한 진짜 스크립트 (data-site-id 값을 확인하세요) -->
+  <!-- PDF 가이드 1번에 명시된 진짜 스크립트 -->
   <script src="https://blindmmp.com/blind.js"
-        data-site-id="sb_publishable_taejobstest_864610beb0acb327"
-        async></script>
+          data-site-id="sb_publishable_taejobstest_864610beb0acb327"
+          async></script>
 </head>
 <body style="text-align: center; padding-top: 50px;">
   <h1>가입비 알아보기 테스트</h1>
   <p>아래 버튼을 누르면 블라인드 대시보드로 '신청 완료' 데이터가 전송됩니다.</p>
   
-  <!-- 2. 클릭 시 실행되는 이벤트 버튼 -->
   <button onclick="sendEvent()" style="padding: 15px 30px; font-size: 18px; cursor: pointer;">
     가입비 조회 완료하기
   </button>
@@ -21,13 +20,10 @@
   <script>
     function sendEvent() {
       if (typeof window.blindTrack === 'function') {
-        window.blindTrack('sign_up', {
-          plan: 'cost_test',
-          source: 'blindn'
-        });
+        window.blindTrack('sign_up', { plan: 'free' });
         alert('신청 완료 이벤트(sign_up)가 성공적으로 전송되었습니다!');
       } else {
-        alert('blindTrack 스크립트가 로드되지 않았습니다.');
+        alert('blindTrack 스크립트가 아직 로드되지 않았습니다.');
       }
     }
   </script>
