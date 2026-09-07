@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>블라인드 트래킹 테스트 페이지</title>
+  <!-- 1. 스크립트 설치 -->
+  <script async src="https://cdn.blind.com/blind.js" data-site-id="blind_4f8c2e91"></script>
+</head>
+<body style="text-align: center; padding-top: 50px;">
+  <h1>가입비 알아보기 테스트</h1>
+  <p>아래 버튼을 누르면 전환 이벤트(sign_up)가 발생합니다.</p>
+  
+  <!-- 2. 전환 버튼 -->
+  <button onclick="sendEvent()" style="padding: 15px 30px; font-size: 18px; cursor: pointer;">
+    가입비 조회 완료하기
+  </button>
+
+  <script>
+    function sendEvent() {
+      if (typeof window.blindTrack === 'function') {
+        window.blindTrack('sign_up', { source: 'blindn' });
+        alert('이벤트가 성공적으로 전송되었습니다!');
+      } else {
+        alert('blindTrack 스크립트가 로드되지 않았습니다.');
+      }
+    }
+  </script>
+</body>
+</html>
