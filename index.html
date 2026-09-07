@@ -4,19 +4,21 @@
   <meta charset="UTF-8">
   <title>블라인드 트래킹 테스트 페이지</title>
   
-  <!-- PDF 가이드 1번에 명시된 진짜 스크립트 -->
-<script src="https://blindmmp.com/blind.js"
-        data-site-id="sb_publishable_taejobstest_864610beb0acb327"
-        async></script>
+  <!-- 1. 블라인드 스크립트 설치 (PDF 가이드 최신 토큰) -->
+  <script src="https://blindmmp.com/blind.js"
+          data-site-id="sb_publishable_taejobstest_864610beb0acb327"
+          async></script>
 </head>
 <body style="text-align: center; padding-top: 50px;">
   <h1>태잡스 광고 테스트</h1>
   <p>아래 버튼을 누르면 블라인드 대시보드로 '신청 완료' 데이터가 전송됩니다.</p>
   
+  <!-- 2. 클릭 시 이벤트를 전송하는 버튼 -->
   <button onclick="sendEvent()" style="padding: 15px 30px; font-size: 18px; cursor: pointer;">
     완료하기
   </button>
 
+  <!-- 3. 전환 이벤트 호출 함수 -->
   <script>
     function sendEvent() {
       if (typeof window.blindTrack === 'function') {
